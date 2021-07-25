@@ -1,0 +1,23 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+
+    <main class="chat container">
+        <input type="hidden" value="<%= room %>" id="room">
+
+        <div class="container person-info">
+            <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                <form>
+                    <p class="h5">Coloque suas informações</p>
+                    <div class="form-group">
+                        <label for="name">Nome</label>
+                        <input required minlength="3" maxlength="25" type="text" class="form-control" 
+                            id="name" placeholder="Seu nome" value="<%- user ? user.name : '' %>">
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Entrar</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+<%- include('includes/footer') %>

@@ -1,0 +1,47 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+
+        <main class="container index-logout">
+            <%- include('includes/messages') %>
+            <div class="rounded p-3 mb-4 bg-dark text-white">
+                <div style="display: flex; align-items: center;">
+                    <i class="bi-chat-text" style="font-size: 2rem; margin-right: 1rem;" role="img"
+                        aria-label="Chat"></i>
+                    <p style="margin: 0; line-height: 20px;"><strong>Infinity Mensageiro</strong> <br> <small>Bem-vindo!</small></p>
+                </div>
+            </div>
+            <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                <h6 class="border-bottom text-center pb-2 mb-0">Chat global</h6>
+
+                <p class="p-3 text-muted text-center mb-0 lh-sm">
+                    Teste o chat em grupo abaixo e fale com quem estiver on-line nele. <br>
+                    Avisamos que o usuário deve tomar todo o cuidado ao falar com quem não conhece. <br>
+                    Evite passar muitas informações pessoais.
+                </p>
+                <div class="d-flex text-muted">
+                    <a href="/room/offtopic" style="margin: 0 auto; padding: .5rem 2rem;" class="btn btn-primary"><i style="display: flex;" class="bi bi-chat-square-text"></i></a>
+                </div>
+            </div>
+            <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                <h6 class="border-bottom pb-2 mb-0">Crie uma conta</h6>
+                <div class="d-flex text-muted pt-3">
+                    <p class="pb-3 mb-0 small lh-sm border-bottom">
+                        <strong class="d-block text-dark">Registre-se</strong>
+                        Somente com uma conta que você, como usuário, poderá criar novas salas e entrar em 
+                        salas feitas por outros usuários. 
+                    </p>
+                </div>
+                <div class="d-flex text-muted pt-3">
+                    <p class="pb-3 mb-0 small lh-sm border-bottom">
+                        <strong class="d-block text-dark">Conecte-se</strong>
+                        Já criou uma conta? Ótimo, você pode fazer login e criar salas novas de forma simples e 
+                        intuitivas. Tente um pouco.
+                    </p>
+                </div>
+                <small class="d-block text-end mt-3">
+                    <a href="/login">Criar conta ou entrar</a>
+                  </small>
+            </div>
+        </main>
+
+        <%- include('includes/footer') %>

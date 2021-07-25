@@ -1,0 +1,51 @@
+<%- include('includes/head') %> 
+    <%- include('includes/nav') %>
+    
+    <main class="container index-login">
+        <%- include('includes/messages') %> 
+
+        <div class="rounded p-3 mb-4 bg-dark text-white">
+            <div style="display: flex; align-items: center;">
+                <i class="bi bi-person-circle" style="font-size: 2rem; margin-right: 1rem;" role="img"
+                    aria-label="Chat"></i>
+                <p style="margin: 0; line-height: 20px;"><strong><%= user.name %></strong> <br> <small>Bem-vindo!</small></p>
+            </div>
+        </div>
+
+        <div class="mb-4 p-3 bg-white rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-0">Conecte-se</h6>
+
+            <p class="p-3 text-muted mb-0 lh-sm">
+                Entre no bate-papo em grupo de tema off-topic que está disponível para todos os usuários,
+                incluindo aqueles que não possuem contas. Comece a interagir gratuitamente.
+            </p>
+            <div class="d-flex text-muted">
+                <a href="/room/offtopic" style="margin: 0 auto; padding: .5rem 2rem;" class="btn btn-primary"><i style="display: flex;" class="bi bi-chat-square-text"></i></a>
+            </div>
+        </div>
+        <div class="mb-4 p-3 bg-white rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-0">Ou crie sua sala</h6>
+
+            <p class="p-3 text-muted mb-0 lh-sm">
+                Você, sendo um usuário registrado, pode criar ou acessar salas 
+                de bate-papo feitas por outras pessoas registradas. Dessa forma, 
+                criar salas privadas é simples. Basta compartilhar o seu código de acesso.
+            </p>
+            <div class="d-flex text-muted">
+                <a href="/room/private" style="margin: 0 auto; padding: .5rem 2rem;" class="btn btn-primary"><i style="display: flex;" class="bi bi-door-open"></i></a>
+            </div>
+        </div>
+        <div class="mb-4 p-3 bg-white rounded shadow-sm">
+            <h6 class="border-bottom pb-2 mb-0">Veja as salas</h6>
+
+            <p class="p-3 text-muted mb-0 lh-sm">
+                Alguém criou uma sala e te convidou ou quer
+                encontrar salas abertas? Acesse por aqui.
+            </p>
+            <div class="d-flex text-muted">
+                <a href="/room/sharing" style="margin: 0 auto; padding: .5rem 2rem;" class="btn btn-primary"><i style="display: flex;" class="bi bi-signpost-split"></i></a>
+            </div>
+        </div>
+    </main>
+
+<%- include('includes/footer') %> 

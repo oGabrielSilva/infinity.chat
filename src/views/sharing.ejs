@@ -1,0 +1,35 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+        <%- include('includes/messages') %>
+
+            <main class="container sharing">
+                <div class="mb-4 p-3 bg-white rounded shadow-sm">
+                    <p class="h5 pb-3 border-bottom">
+                        Id de usuários
+                    </p>
+
+                    <div class="p-3 text-muted mb-0 lh-sm">
+                        <form class="form-controller-chat">
+                            <div class="form-group mb-2">
+                                <label for="name">Insira o ID de conexão de alguém</label>
+                                <input autocomplete="off" draggable="false" required type="text" class="form-control"
+                                    id="id" placeholder="ID de conexão">
+                            </div>
+                            <button type="submit" class="btn btn-success mb-4">Enviar pedido</button>
+                        </form>
+                    </div>
+
+                    <div class="p-3 text-muted mb-0 lh-sm border-top">
+                        <p class="text-muted">
+                            Ou usuários compartilharão seus Id abaixo.
+                            Clique em um e comece a conversar com aquela pessoa.
+                        </p>
+                    </div>
+
+                    <div class="list-group" id="list-group">
+
+                    </div>
+                </div>
+            </main>
+
+            <%- include('includes/footer') %>

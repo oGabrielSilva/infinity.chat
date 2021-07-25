@@ -1,0 +1,44 @@
+<%- include('includes/head') %> 
+<%- include('includes/nav') %> 
+<%- include('includes/messages') %>
+
+    <main class="container private">
+        <div class="mb-4 p-3 bg-white rounded shadow-sm">
+            <p class="h5 pb-3 border-bottom">Compartilhe o seu ID</p>
+            
+            <div class="p-3 text-muted mb-0 lh-sm selectName">
+                <label for="nameId">Seu nome</label>
+                <input minlength="3" maxlength="25" type="text" value="<%= user.name %>" class="form-control" id="nameId">
+            </div>
+
+            <div class="p-3 text-muted mb-0 lh-sm">
+                <label for="userSocketId">Seu ID de conexão</label>
+                <input type="text" readonly placeholder="Carregando..." class="form-control" id="userSocketId">
+            </div>
+            
+            <div class="p-3 text-muted mb-0 lh-sm">
+                <button id="share" class="btn btn-primary">Compartilhar</button>
+                <button id="copy" class="btn btn-danger">Copiar</button>
+            </div>
+
+            <p class="text-muted"><small>
+                Ao clicar em compartilhar, pessoas podem criar conversas com você.
+                o botão copiar apenas envia seu código para sua área de transferência.
+            </small></p>
+            <p class="text-danger text-center"><small>
+                ATENÇÂO: não copie e envie o ID de conexão para <strong>desconhecidos</strong>. 
+                Use o botão compartilhar para falar com eles.
+            </small></p>
+        </div>
+
+        <div class="mb-4 p-3 bg-white rounded shadow-sm" id="index">
+            <p class="text-muted">
+                <small>
+                    Ao compartilhar, pessoas que queiram conversar com você aparecerão aqui abaixo.
+                </small>
+            </p>
+        </div>
+
+    </main>
+
+<%- include('includes/footer') %> 
