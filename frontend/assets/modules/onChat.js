@@ -1,5 +1,6 @@
 function onChat(data, meOrSystem) {
-    return `
+    const div = document.createElement('div')
+    div.innerHTML = `
         <div class="message${meOrSystem ? '-me' : '-others'}">
             <span>
                 <strong>${String(data.nick)}</strong><br>
@@ -7,6 +8,7 @@ function onChat(data, meOrSystem) {
             </span>    
         </div>
     `
+    return div 
 }
 
 export { onChat }

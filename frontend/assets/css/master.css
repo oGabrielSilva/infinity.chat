@@ -18,7 +18,7 @@ textarea:focus {
 }
 
 #chat {
-    height: 65vh;
+    height: 58vh;
     overflow: auto;
 }
 

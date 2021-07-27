@@ -9,6 +9,7 @@ const socket = io()
 const main = document.querySelector('main')
 const room = main.querySelector('#room') ? main.querySelector('#room').value : ''
 const nick = []
+// const audio = new Audio('/assets/sound/notification.mp3')
 
 function sendMessage(name = nick, postman = room) {
     const camp = main.querySelector('textarea')
@@ -18,7 +19,8 @@ function sendMessage(name = nick, postman = room) {
     const chat = main.querySelector('#chat')
     const nick = name
     const room = postman
-    chat.innerHTML = onChat({ nick, message }, true) + chat.innerHTML
+    chat.appendChild(onChat({ nick, message }, true))
+    chat.scrollTop = chat.scrollHeight;
     socket.emit('send message', { nick, message, room })
 }
 
@@ -36,9 +38,12 @@ function ioServer() {
 
     socket.on('message', data => {
         const chat = main.querySelector('#chat')
+
         if (!chat) return
-        chat.innerHTML = onChat(data) + chat.innerHTML
+        chat.appendChild(onChat(data))
+        chat.scrollTop = chat.scrollHeight;
     })
+
 }
 
 // ---------------------------------------------------------------------------------------------- //
@@ -53,9 +58,12 @@ function ioPrivateServer() {
 
     socket.on('message', data => {
         const chat = main.querySelector('#chat')
+
         if (!chat) return
-        chat.innerHTML = onChat(data) + chat.innerHTML
+        chat.appendChild(onChat(data))
+        chat.scrollTop = chat.scrollHeight;
     })
+
 
     socket.on('permission', data => {
         const { postman } = data
@@ -115,15 +123,21 @@ function ioSearch() {
         textarea.removeAttribute('readonly')
         textarea.removeAttribute('placeholder')
         const chat = main.querySelector('#chat')
+
         if (!chat) return
-        chat.innerHTML = onChat({ nick: 'Infinity', message: 'Seu pedido de chat foi aceito' }) + chat.innerHTML
+        chat.appendChild(onChat({ nick: 'Infinity', message: 'Seu pedido de chat foi aceito' }))
+        chat.scrollTop = chat.scrollHeight;
     })
+
 
     socket.on('message', data => {
         const chat = main.querySelector('#chat')
+
         if (!chat) return
-        chat.innerHTML = onChat(data) + chat.innerHTML
+        chat.appendChild(onChat(data))
+        chat.scrollTop = chat.scrollHeight;
     })
+
 
     form.addEventListener('submit', e => {
         e.preventDefault()
